@@ -1,0 +1,18 @@
+# Site settings
+title: mo | Portfolio
+description: "A personal website to showcase my journey and projects."
+url: "https://mo-geb.github.io"
+author: mo
+
+# Navigation - these links will appear in the header
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "About Me"
+    url: "/about"
+  - title: "Projects"
+    url: "/projects"
+
+# Build settings
+theme: jekyll-theme-minimal
+markdown: kramdown
