@@ -6,7 +6,7 @@
     <title>mo | cost tracker</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="projects-cost-tracker">
     <header>
         <nav>
             <a href="/index.html" class="logo">Moritz Gebhardt</a>
@@ -17,38 +17,80 @@
         </nav>
     </header>
     <main>
-        <div class="page-title">
-            <h1>Cost Tracker App</h1>
-        </div>
-        <div class="project-card" style="align-items:center;">
-            <img src="/resources/icon-light.png" alt="Cost Tracker App Icon" style="width:96px;height:96px;border-radius:20%;box-shadow:0 2px 12px rgba(60,60,100,0.12);margin-bottom:1.2rem;" />
-            <div class="project-details" style="text-align:center;">
-                <h3 class="project-title">Minimal cost tracker app</h3>
-                <p class="project-description">A beautifully simple app to track your regular expenses, designed for iOS with privacy and ease-of-use in mind.</p>
-                <ul style="list-style:none;padding:0;margin:1.2rem 0 1.5rem 0;display:inline-block;text-align:left;">
-                    <li>✅ <strong>Minimal UI:</strong> Focus on what matters—your expenses.</li>
-                    <li>🔒 <strong>Private by design:</strong> All data stays on your device or iCloud.</li>
-                    <li>📊 <strong>Quick insights:</strong> See your monthly and yearly spending at a glance.</li>
-                    <li>🌙 <strong>Dark mode:</strong> Looks great day and night.</li>
-                    <li>📱 <strong>iOS-native:</strong> Fast, smooth, and feels right at home on your iPhone.</li>
-                </ul>
-                <a href="./privacy.html" class="btn btn-tertiary" style="margin-bottom:0.7rem;">Privacy Policy</a>
+        <div class="project-header-area">
+            <img src="/resources/icon-light.png" alt="Cost Tracker App Icon" class="project-header-icon" />
+            <div class="project-header-info">
+                <h2 class="project-header-title">Minimal Cost Tracker</h2>
+                <p class="project-header-desc">My first ever iOS app to oraganize and keep track of all recurring expenses</p>
             </div>
         </div>
-        <section style="margin-top:2.5rem;">
-            <h2 style="margin-bottom:0.7rem;">Design Philosophy</h2>
-            <p>Cost Tracker is for people who value simplicity and focus. Inspired by iOS design, it’s a truly native-feeling app that does one thing—track your regular expenses—beautifully and efficiently. There are no ads, no subscriptions, and no hidden fees: just a single, one-time purchase. I believe finance apps should be clutter-free, so I won’t add features that distract from the core purpose. No bloat, no distractions—just the essentials, done right.</p>
+        <section class="project-section">
+            <h2>Why I built this app</h2>
+            <p>I am one of those people who need to have an overview over pretty much everything that's going on in my life, because I don't like getting blindsided by anything. 
+                Especially when it comes to subscriptions, insurance and similar - I hate checking my mails and finding out there's an upcoming payment I forgot about. 
+                That's why I started tracking all my expenses with Notion one day. That was a huge improvement and made me be far more aware of my finances. 
+                While I think Notion is a great tool that I still love, it bothered me that from time to time, there were many features added cluttering the app and distracting me from the tasks I used it for. 
+                Also while it's one of the most versatile tools there is, this means it is not tailored to the purpose of cost tracking. 
+                When I was looking for an alternative onn the AppStore, I was shocked by the amount of Apps that offer Options for ost tracking, but with every app I looked at, they were either cluttered with "smart" features, subscription-based or just not pretty.
+                I believe cost tracking has many purposes - one of them becoming aware of the recurring costs and how much you spend long-term. I believe paying a 3€ subscription for a cost tracker would be one of those unnessecary costs.
+                So what I decided to do was just do it myself and maybe offer an App for those, that feel the same.
+                Cost Tracker is for people who value simplicity and focus. Inspired by iOS design, it's a truly native-feeling app that does one thing — track your regular expenses—beautifully and efficiently. 
+                There are no ads, no subscriptions, and no hidden fees: just a single, one-time purchase. There also won't be any features added that distract from the core purpose (no AI chat function to "help" you get your life under control). No bloat, no distractions - just the essentials, done right.</p>
         </section>
-        <section style="margin-top:2.5rem;">
-            <h2 style="margin-bottom:0.7rem;">Roadmap</h2>
-            <ul style="list-style:none;padding:0;margin:1.2rem 0 1.5rem 0;display:inline-block;text-align:left;">
-                <li>🔄 <strong>iCloud sync:</strong> Sync your expenses across all devices</li>
-                <li>🔔 <strong>Customizable notifications:</strong> Get gentle reminders for upcoming expenses.</li>
-                <li>🛠️ <strong>Multiple accounts:</strong> Track expenses for multiple accounts.</li>
-            </ul>
-            <p style="color:#888;font-size:0.95em;">I only add features that truly improve the core experience—no clutter, no bloat.</p>
+        <section class="project-section">
+            <h2>Milestones</h2>
+            <div class="project-cards-row">
+                <div class="mini-card">
+                    <div class="mini-card-icon">🚀</div>
+                    <div class="mini-card-title">Start of project</div>
+                    <div class="mini-card-date">June 29, 2025</div>
+                    <div class="mini-card-desc">Initial idea and first lines of code.</div>
+                </div>
+                <div class="mini-card">
+                    <div class="mini-card-icon">🧪</div>
+                    <div class="mini-card-title">TestFlight Beta Launch</div>
+                    <div class="mini-card-date">July 18, 2025</div>
+                    <div class="mini-card-desc">First beta version available for family & friends</div>
+                </div>
+            </div>
         </section>
-        <section style="margin-top:2.5rem;text-align:center;">
+        <section class="project-section">
+            <h2>Roadmap</h2>
+            <div class="project-cards-row">
+                <div class="mini-card">
+                    <div class="mini-card-icon">🔔</div>
+                    <div class="mini-card-title">Push notifications</div>
+                    <div class="mini-card-date">Planned</div>
+                    <div class="mini-card-desc">Customizable reminders for upcoming expenses.</div>
+                </div>
+                <div class="mini-card">
+                    <div class="mini-card-icon">🚀</div>
+                    <div class="mini-card-title">Official launch</div>
+                    <div class="mini-card-date">Planned</div>
+                    <div class="mini-card-desc">App Store release for everyone.</div>
+                </div>
+                <div class="mini-card">
+                    <div class="mini-card-icon">🛠️</div>
+                    <div class="mini-card-title">Multiple accounts support</div>
+                    <div class="mini-card-date">Planned</div>
+                    <div class="mini-card-desc">Track expenses for multiple accounts.</div>
+                </div>
+                <div class="mini-card">
+                    <div class="mini-card-icon">📱</div>
+                    <div class="mini-card-title">iPad app optimization</div>
+                    <div class="mini-card-date">Planned</div>
+                    <div class="mini-card-desc">Better experience on iPad devices.</div>
+                </div>
+            </div>
+        </section>
+        <section class="project-section" style="text-align:center;">
+            <h2>More</h2>
+            <div class="project-links-row">
+                <a href="./privacy.html" class="btn btn-gradient">Privacy Policy</a>
+                <!-- Future: <a href="./tos.html" class="btn btn-gradient">Terms of Service</a> -->
+            </div>
+        </section>
+        <section class="project-section" style="text-align:center;">
             <h2 style="margin-bottom:0.7rem;">Want to try it or give feedback?</h2>
             <p>If you appreciate apps that respect your time and attention, I’d love to hear from you. Want to test Cost Tracker or share your thoughts? <a href="mailto:moritzg.online@gmail.com">Send me an email</a>!</p>
         </section>

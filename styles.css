@@ -7,6 +7,7 @@
   --radius: 16px;
   --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --transition: 0.18s cubic-bezier(.4,0,.2,1);
+  --card-bg: #f3f3f3;
 }
 
 html {
@@ -24,7 +25,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(to right, var(--accent), var(--accent2)); 
+  background: #fff;
   color: var(--foreground);
   font-family: var(--font-main);
   line-height: 1.6;
@@ -32,11 +33,16 @@ body {
   flex-direction: column;
 }
 
+body.landing {
+  background: linear-gradient(to right, var(--accent), var(--accent2));
+  color: #fff;
+}
+
 header {
   position: sticky;
   top: 0;
   padding: 1.2rem 1.2rem 1.2rem 1.2rem;
-  background: rgba(255,255,255,0.75);
+  background: #fff;
   backdrop-filter: blur(12px) saturate(1.5);
   -webkit-backdrop-filter: blur(12px) saturate(1.5);
   border-bottom: 1.5px solid var(--accent);
@@ -121,8 +127,11 @@ nav ul li a:hover, nav ul li a:focus {
   font-size: 4rem; 
   font-weight: 800;
   margin-bottom: 1rem; 
-  background: none; 
-  color: #fff;
+  background: none !important;
+  color: #fff !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #fff !important;
+  background-clip: initial !important;
 }
 .hero-subtitle {
   font-size: 1.5rem; 
@@ -133,16 +142,16 @@ nav ul li a:hover, nav ul li a:focus {
 main {
   flex: 1 1 auto;
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 3rem;
+  padding: 0 2vw 3rem 2vw;
 }
 
 section, .project-card, .privacy-container {
-  background: var(--background);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--background);
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
   margin-bottom: 2rem;
   padding: 2rem 1.5rem;
 }
@@ -152,42 +161,110 @@ section, .project-card, .privacy-container {
   font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
-  background: #ffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.project-card-row {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-.project-icon {
-  width: 124px;
-  height: 124px;
-  border-radius: 20%;
-  box-shadow: 0 2px 8px rgba(60,60,100,0.10);
-  flex-shrink: 0;
-}
-.project-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
 }
-.project-description {
-  color: #555;
-  margin-bottom: 1rem;
+
+/* For the Cost Tracker app page, remove gradient from .page-title h1 and apply to .project-header-title */
+.projects-cost-tracker .page-title h1 {
+  color: var(--foreground);
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+.projects-cost-tracker .project-header-title {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.project-header-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.project-header-icon {
+  width: 96px;
+  height: 96px;
+}
+.project-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+.project-header-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--foreground);
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+.project-header-desc {
+  color: #444;
+  font-size: 1.1rem;
+  margin: 0;
+}
+.project-section {
+  margin-bottom: 2.5rem;
+}
+.project-cards-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.mini-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.08);
+  padding: 1.2rem 1.3rem 1.1rem 1.3rem;
+  min-width: 180px;
+  max-width: 300px;
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+.mini-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.mini-card-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+.mini-card-date {
+  font-size: 0.98rem;
+  color: #888;
+  margin-bottom: 0.2rem;
+}
+.mini-card-desc {
+  font-size: 0.98rem;
+  color: #444;
+}
+/* Remove old project card styles */
+.project-card, .project-card-row, .project-icon, .project-title, .project-description {
+  display: none !important;
 }
 
 .btn, .btn-tertiary {
@@ -261,6 +338,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   font-weight: 700;
   margin-top: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 p {
   margin-top: 0;
@@ -274,6 +356,148 @@ a {
 a:hover, a:focus {
   color: #005ecb;
   text-decoration: underline;
+}
+
+
+.project-feature {
+  background: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 2px 16px rgba(60,60,100,0.07);
+  border: none;
+  margin: 0;
+  padding: 3rem 3rem 3rem 3rem;
+  max-width: none;
+}
+.project-feature-grid {
+  display: flex;
+  gap: 6vw;
+  align-items: center;
+  width: 100%;
+}
+.project-feature-icon img {
+  width: 320px;
+  height: 320px;
+  border-radius: 0;
+  background: none;
+  object-fit: contain;
+}
+.project-feature-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 0;
+}
+.project-feature-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin: 0 0 0 0;
+  line-height: 1;
+  color: var(--foreground);
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+.project-feature-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.7em 0;
+  color: var(--foreground);
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+.project-feature-desc {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 1.2rem;
+}
+.project-feature-details {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+.project-feature-detail-label {
+  font-weight: 600;
+  color: var(--foreground);
+  font-size: 1.05rem;
+}
+.project-feature-detail-value {
+  color: #222;
+  font-size: 1.01rem;
+}
+.btn-gradient {
+  padding: 1rem 2.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.08rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.10);
+  transition: background 0.18s cubic-bezier(.4,0,.2,1), color 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-gradient:hover, .btn-gradient:focus {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  filter: brightness(1.08);
+}
+.project-feature-details-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.project-feature-btn {
+  align-self: flex-end;
+  margin-left: 2.5rem;
+  white-space: nowrap;
+}
+.project-links-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1.2rem 0 0.5rem 0;
+}
+@media (max-width: 900px) {
+  .project-feature-grid {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .project-feature-icon img {
+    width: 100px;
+    height: 100px;
+  }
+  main {
+    padding: 0 0.5rem 3rem 0.5rem;
+  }
+  .project-feature {
+    padding: 1.5rem 0.7rem 1.5rem 0.7rem;
+  }
+  .project-feature-details-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+  .project-feature-btn {
+    margin-left: 0;
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+  .project-header-area {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
 }
 
 
@@ -291,4 +515,8 @@ a:hover, a:focus {
   section, .project-card, .privacy-container {
     padding: 1.2rem 0.7rem;
   }
+}
+
+.projects-cost-tracker .project-header-area {
+  margin-top: 2.5rem;
 }
