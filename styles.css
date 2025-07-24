@@ -537,15 +537,15 @@ a:hover, a:focus {
   object-fit: cover;
   object-position: 60% 15%;
   border-radius: 50%;
-  /* Remove position, top, right */
   display: block;
-  margin: 0 auto 2rem auto; /* Center and add space below */
+  margin: 0 auto 2rem auto;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 3px solid #fff;
+  border: 2px solid transparent;
+  background-image: linear-gradient(90deg, var(--accent), var(--accent2));
 }
 
 .spacer {
-    height: 2.5rem; /* Adjust as needed */
+    height: 2.5rem;
     width: 100%;
 }
 
